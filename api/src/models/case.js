@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const CaseSchema = new mongoose.Schema({
+const CaseSchema = mongoose.Schema({
     _id:mongoose.Schema.Types.ObjectId,
     name:String,
     location:String,

@@ -7,6 +7,8 @@ router.route('/api/data').post((req,res)=>{
     const data = req.body
     //Simulate traffic type
     data.type = 'msqRabbit'
+
+
     
     res.send('OK')
 })
