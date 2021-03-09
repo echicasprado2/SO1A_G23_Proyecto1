@@ -4,11 +4,12 @@
   "description": "Covid tracker api",
   "main": "src/server.js",
   "scripts": {
-  	"start":"node src/server.js"
+    "start": "node src/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.11.19"
   }
 }
