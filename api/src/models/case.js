@@ -7,7 +7,7 @@ const CaseSchema = mongoose.Schema({
     age:Number,
     infectedtype:String,
     state:String,
-    msgtype:String
+    type:String
 },{ 
     timestamps: true 
 })
