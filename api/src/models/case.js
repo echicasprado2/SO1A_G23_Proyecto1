@@ -4,6 +4,7 @@ const CaseSchema = mongoose.Schema({
     _id:mongoose.Schema.Types.ObjectId,
     name:String,
     location:String,
+    region:String,
     age:Number,
     infectedtype:String,
     state:String,

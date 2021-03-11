@@ -2,6 +2,7 @@ const express = require('express')
 const { json } = require('body-parser')
 const mongoose = require('mongoose')
 const Case = require('../models/case')
+const getRegion = require('../utils/region')
 
 let router = express.Router()
 
@@ -10,6 +11,7 @@ router.route('/api/data').post((req,res)=>{
     //Simulate traffic type
     data.type = 'msqRabbit'
     data._id = mongoose.Types.ObjectId()
+    data.region = getRegion(data.location)
 
     console.log(data)
     let cases = new Case(data)
