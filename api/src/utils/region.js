@@ -13,7 +13,6 @@ const getRegion = (location) => {
             return "Nororiente"
         case "Escuintla":
             return "Central"
-        case "Quetzaltenango":
         case "Guatemala":
             return "Metropolitana"
         case "Huehuetenango":
