@@ -21,4 +21,16 @@ router.route('/api/data').post((req,res)=>{
     res.send('OK')
 })
 
+router.route('/api/cases/departments/top5').get(async(req,res)=>{
+    const docs = await Case.aggregate([
+        {$group:{
+            _id:"$location",
+            count:{$sum:1}
+        }},
+        {$sort:{"count":-1}},
+        {"$limit":5}
+    ])
+    res.json(docs)
+})
+
 module.exports = router
