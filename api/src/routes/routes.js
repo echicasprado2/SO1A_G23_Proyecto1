@@ -86,5 +86,35 @@ router.route('/api/cases/lastfive').get(async(req,res) => {
     ])
     res.json(docs)
 })
-
+//Rango de edades
+router.route('/api/cases/agerange').get(async(req,res) => {
+    const docs = await Case.aggregate([
+        {
+            $project: {
+                "range": {
+                    $concat: [
+                        { $cond: [{$and:[ {$gt:["$age", 0 ]}, {$lt: ["$age", 10]}]}, "0-9", ""] },
+                        { $cond: [{$and:[ {$gte:["$age",10]}, {$lt:["$age", 20]}]}, "10-19", ""]},
+                        { $cond: [{$and:[ {$gte:["$age",20]}, {$lt:["$age", 30]}]}, "20-29", ""]},
+                        { $cond: [{$and:[ {$gte:["$age",30]}, {$lt:["$age", 40]}]}, "30-39", ""]},
+                        { $cond: [{$and:[ {$gte:["$age",40]}, {$lt:["$age", 50]}]}, "40-49", ""]},
+                        { $cond: [{$and:[ {$gte:["$age",50]}, {$lt:["$age", 60]}]}, "50-59", ""]},
+                        { $cond: [{$and:[ {$gte:["$age",60]}, {$lt:["$age", 70]}]}, "60-69", ""]},
+                        { $cond: [{$and:[ {$gte:["$age",70]}, {$lt:["$age", 80]}]}, "70-79", ""]},
+                        { $cond: [{$and:[ {$gte:["$age",80]}, {$lt:["$age", 90]}]}, "80-89", ""]},
+                        { $cond: [{$and:[ {$gte:["$age",90]}, {$lt:["$age", 100]}]}, "90-99", ""]},
+                        
+                    ]
+                }
+            }
+        },
+        {
+            $group: {
+                _id:"$range",
+                count: {$sum:1}
+            }
+        },
+    ])
+    res.json(docs)
+})
 module.exports = router
