@@ -21,6 +21,13 @@ router.route('/api/data').post((req,res)=>{
     })
 
     res.send('OK')
+}).get(async(req,res)=>{
+    const docs = await Case.aggregate([
+        {
+            $sort:{"createdAt":-1}
+        }
+    ])
+    res.json(docs)
 })
 
 router.route('/api/cases/departments/top5').get(async(req,res)=>{
