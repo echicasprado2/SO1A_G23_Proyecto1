@@ -71,4 +71,13 @@ router.route('/api/cases/infectedtype/all').get(async(req,res) => {
     res.json(docs)
 })
 
+router.route('/api/cases/lastfive').get(async(req,res) => {
+    const docs = await Case.aggregate([
+        {
+            $sort:{"createdAt":-1}
+        }, {"$limit":5}
+    ])
+    res.json(docs)
+})
+
 module.exports = router
