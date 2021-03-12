@@ -47,4 +47,16 @@ router.route('/api/cases/regiontop').get(async(req,res) => {
     res.json(docs)
 })
 
+router.route('/api/cases/state/all').get(async(req,res) => {
+    const docs = await Case.aggregate([
+        {
+            $group:{
+                _id:"$state",
+                count:{$sum:1}
+            }
+        }
+    ])
+    res.json(docs)
+})
+
 module.exports = router
