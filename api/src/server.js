@@ -1,5 +1,5 @@
 const express = require('express')
-const port = 3000;
+const port = 3001;
 const routes = require('./routes/routes')
 const bodyParser = require("body-parser")
 const mongoose = require('mongoose')
