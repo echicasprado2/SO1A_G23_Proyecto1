@@ -5,9 +5,11 @@ import Home from './Home';
 
 function App() {
   return (
-    <React.Fragment>
-      <Home/>
-    </React.Fragment>
+    <Router>
+      <Switch>
+        <Route path='/' exact component={Home}/>
+      </Switch>
+    </Router>
   );
 }
 
