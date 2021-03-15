@@ -52,3 +52,5 @@ Mkfile.old
 dkms.conf
 # nodejs api
 api/node_modules
+#frontend
+data_tacker/node_modules
