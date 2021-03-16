@@ -19,7 +19,7 @@ router.route('/api/data').post((req,res)=>{
         if(err) return console.log("ERORR")
         console.log("Data Saved")
     })
-
+    
     res.send('OK')
 }).get(async(req,res)=>{
     const docs = await Case.aggregate([
@@ -27,6 +27,7 @@ router.route('/api/data').post((req,res)=>{
             $sort:{"createdAt":-1}
         }
     ])
+    res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
 
