@@ -3,7 +3,7 @@ import {useSortBy, useTable} from 'react-table'
 import ReactTable from 'react-table'
 
 import DataTable from './DataTable'
-
+import './resources/styles/showData.css'
 
 
 const Header = ()=> (
@@ -88,7 +88,15 @@ function ShowData() {
         <React.Fragment>
             <Header/>
             <div className="main">
-            <DataTable columns={columns} data={data}/>
+                <section className="content-table">
+                    <div className="content-center">
+                        <div className="main-table">
+                            <h3>Datos Recopilados</h3>
+                            <DataTable columns={columns} data={data}/>
+                        </div>
+                    </div>
+                </section>
+                <footer></footer>
             </div>
         </React.Fragment>
     );
