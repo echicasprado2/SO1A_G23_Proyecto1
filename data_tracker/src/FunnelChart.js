@@ -2,24 +2,6 @@ import React from 'react';
 import { ResponsiveFunnel } from "@nivo/funnel";
 import './resources/styles/funnelChart.css'
 
-const data = [
-  {
-    id: "step_sent",
-    value: 91922,
-    label: "Sent"
-  },
-  {
-    id: "step_viewed",
-    value: 77979,
-    label: "Viewed"
-  },
-  {
-    id: "step_clicked",
-    value: 43633,
-    label: "Clicked"
-  }
-];
-
 const MyResponsiveFunnel = ({ data }) => (
   <ResponsiveFunnel
     data={data}
