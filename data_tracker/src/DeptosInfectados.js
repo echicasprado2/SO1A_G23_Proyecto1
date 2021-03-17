@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import FunnelChart from './FunnelChart';
 
+/*
 const Header = ()=> (
     <header>
         <div className="container">
@@ -30,7 +31,7 @@ const Header = ()=> (
             </div>
         </div>
     </header>
-)
+)*/
 
 
 
@@ -63,7 +64,7 @@ function DeptosInfectados() {
 
     return (
         <React.Fragment>
-            <Header/>
+            
             <FunnelChart dataset={data}/>
         </React.Fragment>
     );

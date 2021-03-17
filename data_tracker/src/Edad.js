@@ -1,37 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import BarChart from './BarChart';
 
-const Header = ()=> (
-    <header>
-        <div className="container">
-            <div className="row header-content">
-                <nav className="menu">
-                    <div className="nav-left">
-                        <div className="display-mode">
-                            <div className="logo">
-                                <h1>CovidTacker</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="nav-center">
-                        <div className="display-nav">
-                            <div className="btn-group-nav">
-                                <ul>
-                                    <a href="/">Inicio</a>
-                                    <a href="/">Datos Recopilados</a>
-                                    <a href="/">Metricas</a>
-                                    <a href="/">Servidor</a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="nav-right"></div>
-                </nav>
-            </div>
-        </div>
-    </header>
-)
-
 function setIndex(range) {
     switch (range) {
         case "0-9":
@@ -85,7 +54,6 @@ function Edad() {
 
     return (
         <React.Fragment>
-            <Header/>
             <BarChart dataset={data}/>
         </React.Fragment>
     );

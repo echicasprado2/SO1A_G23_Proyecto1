@@ -2,36 +2,6 @@ import React,{useState,useEffect, useMemo} from 'react';
 import TableLastCases from './TableLastCases'
 import './resources/styles/showData.css'
 
-const Header = ()=> (
-    <header>
-        <div className="container">
-            <div className="row header-content">
-                <nav className="menu">
-                    <div className="nav-left">
-                        <div className="display-mode">
-                            <div className="logo">
-                                <h1>CovidTacker</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="nav-center">
-                        <div className="display-nav">
-                            <div className="btn-group-nav">
-                                <ul>
-                                    <a href="/">Inicio</a>
-                                    <a href="/">Datos Recopilados</a>
-                                    <a href="/">Metricas</a>
-                                    <a href="/">Servidor</a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="nav-right"></div>
-                </nav>
-            </div>
-        </div>
-    </header>
-)
 
 function LastCases() {
 
@@ -82,7 +52,6 @@ function LastCases() {
 
     return (
         <React.Fragment>
-            <Header/>
             <div className="main">
                 <section className="content-table">
                     <div className="content-center">

@@ -1,38 +1,9 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 import './resources/styles/index.css';
 
-function Header() {
-    return(
-      <header>
-        <div className="container">
-          <div className="row hader-content">
-            <nav className="menu">
-              <div className="nav-left">
-                <div className="display-mode">
-                  <div className="logo">
-                    <h1>CovidTacker</h1>
-                  </div>
-                </div>
-              </div>
-              <div className="nav-center">
-                <div className="display-nav">
-                  <div className="btn-group-nav">
-                    <ul>
-                      <a href="/">Inicio</a>
-                      <a href="/">Datos Recopilados</a>
-                      <a href="/">Metricas</a>
-                      <a href="/">Servidor</a>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="nav-right"></div>
-            </nav>
-          </div>
-        </div>
-      </header>
-    );
-}
+
+
 
 function Body() {
     return(
@@ -74,7 +45,9 @@ function Body() {
                   </div>
   
                 </div>
-                <div className="content-right"></div>
+                <div className="content-right">
+                  
+                </div>
             </section>
             <footer>
             </footer>
@@ -85,7 +58,6 @@ function Body() {
 function Home() {
     return (
         <React.Fragment>
-            <Header/>
             <Body/>
         </React.Fragment>
     );

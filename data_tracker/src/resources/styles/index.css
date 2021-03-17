@@ -75,6 +75,10 @@ h1 {
     margin-left: 20px;
 }
 
+.nav-right {
+	float: right;
+}
+
 .btn-group-nav a {
 	margin-left: 35px;
 	font-family: 'Raleway', sans-serif;
