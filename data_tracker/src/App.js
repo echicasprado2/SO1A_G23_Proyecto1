@@ -7,6 +7,7 @@ import DeptosInfectados from './DeptosInfectados';
 import InfectadosState from './InfectadosState';
 import InfectadosTipo from './InfectadosTipo';
 import LastCases from './LastCases';
+import Edad from './Edad';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/cases/state' exact component={InfectadosState} />
         <Route path='/cases/infectedtype' exact component={InfectadosTipo} />
         <Route path='/cases/last' exact component={LastCases} />
+        <Route path='/cases/agesrange' exact component={Edad} />
       </Switch>
     </Router>
   );
