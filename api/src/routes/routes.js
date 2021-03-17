@@ -40,6 +40,7 @@ router.route('/api/cases/departments/top5').get(async(req,res)=>{
         {$sort:{"count":-1}},
         {"$limit":5}
     ])
+    res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
 
@@ -52,6 +53,7 @@ router.route('/api/cases/regiontop').get(async(req,res) => {
         {$sort:{"count":-1}},
         {"$limit":1}
     ])
+    res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
 
@@ -64,6 +66,7 @@ router.route('/api/cases/state/all').get(async(req,res) => {
             }
         }
     ])
+    res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
 
@@ -76,6 +79,7 @@ router.route('/api/cases/infectedtype/all').get(async(req,res) => {
             }
         }
     ])
+    res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
 
@@ -85,6 +89,7 @@ router.route('/api/cases/lastfive').get(async(req,res) => {
             $sort:{"createdAt":-1}
         }, {"$limit":5}
     ])
+    res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
 //Rango de edades
@@ -116,6 +121,7 @@ router.route('/api/cases/agerange').get(async(req,res) => {
             }
         },
     ])
+    res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
 module.exports = router
