@@ -6,9 +6,9 @@ const mongoose = require('mongoose')
 
 
 const app = express();
-const mongodbURL = 'mongodb+srv://adminsopes1p1:adminsopes1p1@cluster0.c9orq.mongodb.net/my-db?retryWrites=true&w=majority'
+// const mongodbURL = 'mongodb+srv://adminsopes1p1:adminsopes1p1@cluster0.c9orq.mongodb.net/my-db?retryWrites=true&w=majority'
+const mongodbURL = 'mongodb://localhost:27017/sopes1'
 mongoose.connect(mongodbURL, {useNewUrlParser: true, useUnifiedTopology: true});
-
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(routes)
