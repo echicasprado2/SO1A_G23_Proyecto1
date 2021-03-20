@@ -1,0 +1,27 @@
+.main-bchart {
+	position: absolute;
+	width: 100%;
+}
+
+.bchart {
+	width: 75%;
+	
+	margin: 0 auto;
+    padding-bottom: 125px;
+	margin-top: 100px;;
+
+}
+
+.bchart div {
+	margin:0 auto;
+}
+
+.bchart h3 {
+	color: white;
+	text-align: center;
+}
+
+.bchart text {
+    fill:rgb(255, 255, 255) !important;
+    font-size: 16px !important;
+}

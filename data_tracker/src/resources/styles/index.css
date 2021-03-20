@@ -1,0 +1,179 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #191a1b;
+    position:relative;
+    margin: 0;
+    webkit-font-smoothing: antialiased;
+}
+
+header {
+	color:#fff;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+
+.menu {
+	border-bottom: 1px solid #4A5964;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.menu div {
+	display: inline-block;
+}
+
+.menu a {
+	text-decoration: none;
+	color:#fff;
+
+}
+
+.menu a:hover {
+	color: #fff;
+}
+
+.container {
+    max-width: 1330px  !important;
+}
+
+.big-circles {
+	background-image: url(../img/bottom-blur-circle.svg),url(../img/top-blur-circle.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(50% + 526px) bottom -158px,right 50% top -252px;
+    background-size: 793px,693px;
+    background-attachment: fixed;
+    padding-top: 80px;
+    min-height: 100vh;
+    overflow: hidden;
+    position:relative;
+}
+
+h1 {
+	/*font-weight: 800;*/
+	font-family: 'Recursive', sans-serif;
+	font-size: 30px;
+}
+
+.nav-center {
+	margin-left: 60px;
+}
+
+.nav-left {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    margin-left: 20px;
+}
+
+.nav-right {
+	float: right;
+}
+
+.btn-group-nav a {
+	margin-left: 35px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	color: hsla(0,0%,100%,.75);
+}
+
+.map {
+	width: 60%;
+
+	margin: 0 auto;
+
+}
+
+svg {
+	margin-top: 30px;
+}
+
+
+.content-overview {
+	margin-top: 50px;
+}
+
+.map path {
+	fill: #04C0EB;
+	stroke: #000;
+	stroke-width:2px;
+	transition: fill 0.3s;
+}
+
+.map #GT-QC {
+	fill:#11799B;
+}
+
+.map #GT-PE {
+	fill:#0C89AA;
+}
+
+.map #GT-AV {
+	fill: #14546A;
+}
+
+.map #GT-HU {
+	fill: #15414D;
+}
+
+.map #GT-IZ {
+	fill: #206678;
+}
+
+.map #GT-QZ {
+	fill: #166787;
+}
+
+.map #GT-RE {
+	fill: #0A87A4;
+}
+
+.map #GT-GU {
+	fill: #143F49;
+}
+
+.map #GT-SO {
+	fill: #191A1B;
+}
+
+.map #GT-ES {
+	fill: #0A87A4;
+}
+
+.map #GT-JU {
+	fill: #0F7792;
+}
+
+.map #GT-ZA {
+	fill: #115160;
+}
+
+.map #GT-PR {
+	fill: #05ACD1;
+}
+
+.map path:hover {
+	cursor: pointer;
+	fill:#94e5f7;
+}
+
+.map h3 {
+	font-family: 'Playfair Display', serif;
+	color: white;
+	text-align: center;
+	font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+}
+
+
+

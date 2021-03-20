@@ -1,0 +1,22 @@
+.main-fchart {
+	position: absolute;
+	width: 100%;
+}
+
+.fchart {
+	width: 75%;
+	
+	margin: 0 auto;
+    padding-bottom: 125px;
+	margin-top: 100px;;
+
+}
+
+.fchart div {
+	margin:0 auto;
+}
+
+.fchart h3 {
+	color: white;
+	text-align: center;
+}
