@@ -2,7 +2,7 @@ version: "3.9"
 services:
   server:
     container_name: serverNodejs
-    image: server
+    image: everchicas/servernodejs
     ports:
       - 3001:3001
     links:
