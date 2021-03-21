@@ -1,5 +1,13 @@
 version: "3.9"
 services:
+  server:
+    container_name: serverNodejs
+    image: server
+    ports:
+      - 3001:3001
+    links:
+      - mongodb
+
   mongodb:
     image: mongo
     container_name: mongodb
