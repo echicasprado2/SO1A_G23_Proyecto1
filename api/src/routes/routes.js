@@ -124,4 +124,5 @@ router.route('/api/cases/agerange').get(async(req,res) => {
     res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
+
 module.exports = router
