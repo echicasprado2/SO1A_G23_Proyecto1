@@ -86,11 +86,68 @@ h1 {
 	color: hsla(0,0%,100%,.75);
 }
 
-.map {
-	width: 60%;
+.content-center,.content-left {
+	display: inline-block;
+}
 
+.content-left {
+	width: 20%;
+	color: white;
 	margin: 0 auto;
+	vertical-align: top;
+}
 
+.region-details {
+	float: right;
+	margin-top: 85px;
+}
+
+.region-details ul {
+	list-style-type: none;
+}
+
+.region-details ul strong {
+	font-family: "Playfair Display",serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 30px;
+	display: block;
+	color: white;
+}
+
+.principal-strong {
+	color: #00d1ff  !important;
+}
+
+.region-details ul li {
+	margin-bottom: 30px;
+	letter-spacing: .35px;
+	color: #a4a9bf;
+	border-left: 2px solid #1b1f3a;
+    /*border-left-color: rgb(27, 31, 58);
+	color: hsla(0,0%,100%,.7);*/
+	font-family: "Manrope",sans-serif;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 18px;
+	letter-spacing: .35px;
+	padding-left: 16px;
+	margin-bottom: 24px;
+	cursor: pointer;
+	transition: border-color .35s ease-in-out;
+}
+
+.principal-li {
+	border-color: #00d1ff !important;
+}
+
+.region-details ul li:hover {
+	border-left: 2px solid white;
+}
+
+.content-center {
+	width: 60%;
+	margin: 0 auto;
 }
 
 svg {
@@ -103,67 +160,105 @@ svg {
 }
 
 .map path {
-	fill: #04C0EB;
+	fill: #11799B;
 	stroke: #000;
 	stroke-width:2px;
 	transition: fill 0.3s;
 }
 
-.map #GT-QC {
-	fill:#11799B;
-}
+/*REGION METROPOLITANA*/
+/*.map #GT-GU {
+	fill: #04C0EB;
+}*/
 
-.map #GT-PE {
-	fill:#0C89AA;
-}
-
-.map #GT-AV {
-	fill: #14546A;
-}
-
-.map #GT-HU {
-	fill: #15414D;
-}
-
-.map #GT-IZ {
-	fill: #206678;
-}
-
-.map #GT-QZ {
-	fill: #166787;
+/*REGION SUROCCIDENTE*/
+/*.map #GT-QZ {
+	fill: #04C0EB;
 }
 
 .map #GT-RE {
-	fill: #0A87A4;
+	fill: #04C0EB;
 }
 
-.map #GT-GU {
-	fill: #143F49;
+.map #GT-SM {
+	fill: #04c0eb;
+}
+
+.map #GT-SU {
+	fill: #04C0EB;
 }
 
 .map #GT-SO {
-	fill: #191A1B;
+	fill: #04C0EB;
+}
+
+.map #GT-TO {
+	fill: #04C0EB;
+}*/
+
+/*REGION NOROCCIDENTE*/
+/*.map #GT-QC {
+	fill: #04C0EB;
+}
+
+.map #GT-HU {
+	fill: #04C0EB;
+}*/
+
+/*CENTRAL*/
+/*.map #GT-CM {
+	fill: #04C0EB;
+}
+
+.map #GT-SA {
+	fill: #04C0EB;
 }
 
 .map #GT-ES {
-	fill: #0A87A4;
+	fill: #04C0EB;
+}*/
+
+/*VERAPAZ*/
+/*.map #GT-AV {
+	fill: #04C0EB;
 }
 
-.map #GT-JU {
-	fill: #0F7792;
-}
+.map #GT-BV {
+	fill: #04C0EB;
+}*/
 
-.map #GT-ZA {
-	fill: #115160;
+/*NORORIENTE*/
+/*.map #GT-CQ {
+	fill: #04C0EB;
 }
 
 .map #GT-PR {
-	fill: #05ACD1;
+	fill: #04C0EB;
 }
 
-.map path:hover {
-	cursor: pointer;
-	fill:#94e5f7;
+.map #GT-IZ {
+	fill: #04C0EB;
+}
+
+.map #GT-ZA {
+	fill: #04C0EB;
+}*/
+/*SURORIENTE*/
+/*.map #GT-JU {
+	fill: #04C0EB;
+}
+
+.map #GT-JA {
+	fill: #04C0EB;
+}
+
+.map #GT-SR {
+	fill: #04C0EB;
+}*/
+
+/*PETEN*/
+.map .region {
+	fill: #04C0EB;
 }
 
 .map h3 {
