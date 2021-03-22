@@ -7,7 +7,7 @@ services:
           - "15672:15672"
 
   publisher-rmq:
-      build: ./Sender
+      build: ./sender
       restart: on-failure
       ports:
         - "80:3000"
@@ -15,7 +15,7 @@ services:
         - rabbitmq
 
   consumer-rmq:
-      build: ./Receiver
+      build: ./receiver
       restart: on-failure
       depends_on:
         - rabbitmq
