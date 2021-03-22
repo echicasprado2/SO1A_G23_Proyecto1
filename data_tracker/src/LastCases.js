@@ -42,7 +42,7 @@ function LastCases() {
 
     useEffect(() => {
         (async () => {
-        const url = "http://localhost:3001/api/cases/lastfive"
+        const url = "http://104.154.113.215:3001/api/cases/lastfive"
         const result = await fetch(url);
         const dataset = await result.json();
         setData(dataset);

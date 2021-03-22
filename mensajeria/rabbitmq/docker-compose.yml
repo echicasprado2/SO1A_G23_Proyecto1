@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  rabbitmq:
+      image : rabbitmq:3-management
+      ports: 
+          - "5672:5672"
+          - "15672:15672"
+
+  publisher-rmq:
+      build: ./Sender
+      restart: on-failure
+      ports:
+        - "80:3000"
+      depends_on:
+        - rabbitmq
+
+  consumer-rmq:
+      build: ./Receiver
+      restart: on-failure
+      depends_on:
+        - rabbitmq
