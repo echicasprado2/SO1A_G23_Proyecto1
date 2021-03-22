@@ -7,7 +7,7 @@ function InfectadosState() {
 
     useEffect(() => {
         (async () => {
-        const url = "http://localhost:3001/api/cases/state/all"
+        const url = "http://104.154.113.215:3001/api/cases/state/all"
         const result = await fetch(url);
         const dataset = await result.json();
         /*const arr = await JSON.parse(dataset);
@@ -16,12 +16,22 @@ function InfectadosState() {
       
         let resultData;
         if(dataset.length > 0) {
-
+            
+            let totalCases = 0;
+            let countArray = await dataset.map(element => {
+                return element.count
+            })
+            console.log(countArray)
+            totalCases =  await countArray.reduce((acumulator,current) => {
+                
+                return acumulator + current;
+            });
+            /*
             let totalCases = 0;
             totalCases =  await dataset.reduce((acumulator,current) => {
                 return acumulator.count + current.count;
             });
-            console.log(totalCases)
+            console.log(totalCases)*/
 
             resultData = await dataset.map(element => {
                 return {id:element._id,value:(element.count/totalCases),label:element._id}

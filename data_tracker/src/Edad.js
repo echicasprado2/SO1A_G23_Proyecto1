@@ -32,7 +32,7 @@ function Edad() {
 
     useEffect(() => {
         (async () => {
-        const url = "http://localhost:3001/api/cases/agerange"
+        const url = "http://104.154.113.215:3001/api/cases/agerange"
         const result = await fetch(url);
         const dataset = await result.json();
         

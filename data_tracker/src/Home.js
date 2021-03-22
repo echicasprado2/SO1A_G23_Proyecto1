@@ -8,7 +8,7 @@ function Body() {
 
     useEffect(() => {
         (async () => {
-        const url = "http://localhost:3001/api/cases/regiontop"
+        const url = "http://104.154.113.215:3001/api/cases/regiontop"
         const result = await fetch(url);
         const dataset = await result.json();
         //console.log(dataset[0])
