@@ -53,3 +53,4 @@ dkms.conf
 api/node_modules
 #frontend
 data_tacker/node_modules
+data_tacker/build
