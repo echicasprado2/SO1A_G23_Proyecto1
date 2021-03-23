@@ -5,6 +5,8 @@ services:
     image: everchicas/servernodejs
     ports:
       - 3001:3001
+    volumes:
+      - /proc:/proc
     links:
       - mongodb
 
