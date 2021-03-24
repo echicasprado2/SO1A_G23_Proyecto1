@@ -17,11 +17,12 @@ import (
 )
 
 type caso struct {
-	Name          string `json:"name"`
-	Location      string `json:"location"`
-	Age           int    `json:"age"`
+	Name         string `json:"name"`
+	Location     string `json:"location"`
+	Age          int    `json:"age"`
 	InfectedType string `json:"infectedtype"`
-	State         string `json:"state"`
+	State        string `json:"state"`
+	Type         string `json:"type"`
 }
 
 const (
@@ -50,13 +51,13 @@ func CasoNuevo(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//Variable que almacenará el nuevo caso en formato json
-	var jsonstr = string(`{"name":"` + nuevo.Name + `","location":"` + nuevo.Location + `","age":` + strconv.Itoa(nuevo.Age) + `,"infectedtype":"` + nuevo.InfectedType + `","state":"` + nuevo.State + `"}`)
-	
+	var jsonstr = string(`{"name":"` + nuevo.Name + `","location":"` + nuevo.Location + `","age":` + strconv.Itoa(nuevo.Age) + `,"infectedtype":"` + nuevo.InfectedType + `","state":"` + nuevo.State + `","type":"gRPC"` + `}`)
+
 	//Metodo gRPC
 
 	/*
-	Crea una conexión con el servidor
-	grpc.WithInsecure() os permite realizar una conexión sin tener que suar SSL
+		Crea una conexión con el servidor
+		grpc.WithInsecure() os permite realizar una conexión sin tener que suar SSL
 	*/
 	conn, err := grpc.Dial(address, grpc.WithInsecure(), grpc.WithBlock())
 
@@ -71,11 +72,9 @@ func CasoNuevo(w http.ResponseWriter, r *http.Request) {
 	//Se envía como parametro el Dial de gRPC
 	c := pb.NewGreeterClient(conn)
 
-	
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 
 	defer cancel()
-
 
 	ra, err := c.SayHello(ctx, &pb.HelloRequest{Name: jsonstr})
 
@@ -99,5 +98,5 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/", Inicio).Methods("GET")
 	router.HandleFunc("/CasoNuevo", CasoNuevo).Methods("POST")
-	http.ListenAndServe(":5000", router)
+	http.ListenAndServe(":3001", router)
 }

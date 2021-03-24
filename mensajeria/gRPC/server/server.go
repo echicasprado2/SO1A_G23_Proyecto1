@@ -1,25 +1,35 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
+	"io/ioutil"
 	"log"
 	"net"
-	"fmt"
+	"net/http"
 
 	"google.golang.org/grpc"
 	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 )
 
-type casoJSON struct {
-	Name          string `json:"name"`
-	Location      string `json:"location"`
-	Age           int    `json:"age"`
-	InfectedType string `json:"infectedtype"`
-	State         string `json:"state"`
+func failOnError(err error, msg string) {
+	if err != nil {
+		log.Fatalf("%s: %s", msg, err)
+	}
 }
 
-var ctx = context.Background()
+type casoJSON struct {
+	Name         string `json:"name"`
+	Location     string `json:"location"`
+	Age          int    `json:"age"`
+	InfectedType string `json:"infectedtype"`
+	State        string `json:"state"`
+	Type         string `json:"type"`
+}
+
+//var ctx = context.Background()
 
 const (
 	port = ":50051"
@@ -41,6 +51,18 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 	json.Unmarshal([]byte(data), &info)
 	log.Printf("----- Recibido: %v", info.Name)
 
+	postBody := []byte(string(data))
+	req, err := http.Post("http://104.154.113.215:3001/api/data", "application/json", bytes.NewBuffer(postBody))
+	req.Header.Set("Content-Type", "application/json")
+	failOnError(err, "POST new document")
+	defer req.Body.Close()
+
+	//Read the response body
+	newBody, err := ioutil.ReadAll(req.Body)
+	failOnError(err, "Reading response from HTTP POST")
+	sb := string(newBody)
+	log.Printf(sb)
+
 	return &pb.HelloReply{Message: "Hello " + in.GetName()}, nil
 }
 
@@ -55,7 +77,7 @@ func main() {
 	s := grpc.NewServer()
 
 	pb.RegisterGreeterServer(s, &server{})
-	
+
 	fmt.Println(">> SERVER: El servidor está escuchando...")
 
 	if err := s.Serve(lis); err != nil {
