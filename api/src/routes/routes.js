@@ -11,7 +11,7 @@ router.route('/api/data').post((req,res)=>{
     //Simulate traffic type
     //data.type = 'msqRabbit'
     if(!data.hasOwnProperty('type'))
-        data.type = 'none'
+        data.type = 'RabbitMQ'
     data._id = mongoose.Types.ObjectId()
     data.region = getRegion(data.location)
 
