@@ -9,7 +9,9 @@ let router = express.Router()
 router.route('/api/data').post((req,res)=>{
     const data = req.body
     //Simulate traffic type
-    data.type = 'msqRabbit'
+    //data.type = 'msqRabbit'
+    if(!data.hasOwnProperty('type'))
+        data.type = 'none'
     data._id = mongoose.Types.ObjectId()
     data.region = getRegion(data.location)
 
