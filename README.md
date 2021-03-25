@@ -1,6 +1,8 @@
-# Sistemas Operativos 1 Grupo 23 
+# Sistemas Operativos 1 Grupo 23
 
-![Alt text](https://github.com/echicasprado/SO1A_G23_Proyecto1/images/main/flujo.png)
+![Screenshot](https://github.com/echicasprado/SO1A_G23_Proyecto1/blob/main/images/flujo.png)
+
+
 ## API
 
 ### Dockerfile
