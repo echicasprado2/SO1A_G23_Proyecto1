@@ -116,7 +116,7 @@ func main() {
 	fmt.Println("Server Google PubSub iniciado")
 
 	// Asignar la funcion que controlara las llamadas http
-	http.HandleFunc("/pubsub", http_server)
+	http.HandleFunc("/", http_server)
 
 	// Obtener el puerto al cual conectarse desde una variable de ambiente
 	http_port := ":3000" 
