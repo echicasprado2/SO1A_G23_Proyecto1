@@ -71,7 +71,7 @@ func publicar(mensaje string) error {
 func http_server(w http.ResponseWriter, r *http.Request) {
 	r.Header.Set("Accept", "application/json")
 	// Comprobamos que el path sea exactamente '/' sin parámetros
-    if r.URL.Path != "/pubsub" {
+    if r.URL.Path != "/" {
         http.Error(w, "404 not found.", http.StatusNotFound)
         return
     }
