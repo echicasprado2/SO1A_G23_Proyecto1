@@ -119,7 +119,7 @@ func main() {
 	http.HandleFunc("/pubsub", http_server)
 
 	// Obtener el puerto al cual conectarse desde una variable de ambiente
-	http_port := ":" + EnvVar("PORT")
+	http_port := ":3000" 
 	
 	// Levantar el server, si existe un error levantandolo hay que apagarlo
     if err := http.ListenAndServe(http_port, nil); err != nil {
