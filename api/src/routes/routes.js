@@ -3,6 +3,7 @@ const { json } = require('body-parser')
 const mongoose = require('mongoose')
 const Case = require('../models/case')
 const getRegion = require('../utils/region')
+const fs = require('fs')
 
 let router = express.Router()
 
@@ -126,5 +127,13 @@ router.route('/api/cases/agerange').get(async(req,res) => {
     res.set('Access-Control-Allow-Origin', '*')
     res.json(docs)
 })
+
+router.route('/api/cpu').get(async(req,res) => {
+    const getCpu = () => (fs.readFileSync('/proc/process_info','utf8')).toString();
+    const stringCpu = getCpu()
+    res.set('Access-Control-Allow-Origin', '*')
+    res.json(JSON.parse(stringCpu))
+})
+
 
 module.exports = router
