@@ -96,7 +96,6 @@ func Inicio(w http.ResponseWriter, r *http.Request) {
 //Función principal
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/", Inicio).Methods("GET")
-	router.HandleFunc("/CasoNuevo", CasoNuevo).Methods("POST")
+	router.HandleFunc("/", CasoNuevo).Methods("POST")
 	http.ListenAndServe(":3000", router)
 }
