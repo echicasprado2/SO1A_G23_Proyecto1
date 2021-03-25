@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  grpcserver:
+    build: ./server
+    ports:
+      - "50052:50051"
+    networks:
+      - server
+
+  grpcclient:
+    build: ./client
+    ports:
+      - "5001:5000"
+    networks:
+      - client
+
+networks:
+  grpctuiter:
+    driver: "bridge"

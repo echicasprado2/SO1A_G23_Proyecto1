@@ -1,0 +1,1 @@
+ENV GOOGLE_APLICACION_CREDENTIALS = "./pubsub.key.json"
