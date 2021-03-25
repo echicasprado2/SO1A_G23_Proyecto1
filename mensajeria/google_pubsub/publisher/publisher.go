@@ -71,7 +71,7 @@ func publicar(mensaje string) error {
 func http_server(w http.ResponseWriter, r *http.Request) {
 	r.Header.Set("Accept", "application/json")
 	// Comprobamos que el path sea exactamente '/' sin parámetros
-    if r.URL.Path != "/pubsub" {
+    if r.URL.Path != "/" {
         http.Error(w, "404 not found.", http.StatusNotFound)
         return
     }
@@ -116,10 +116,10 @@ func main() {
 	fmt.Println("Server Google PubSub iniciado")
 
 	// Asignar la funcion que controlara las llamadas http
-	http.HandleFunc("/pubsub", http_server)
+	http.HandleFunc("/", http_server)
 
 	// Obtener el puerto al cual conectarse desde una variable de ambiente
-	http_port := ":" + EnvVar("PORT")
+	http_port := ":3000" 
 	
 	// Levantar el server, si existe un error levantandolo hay que apagarlo
     if err := http.ListenAndServe(http_port, nil); err != nil {

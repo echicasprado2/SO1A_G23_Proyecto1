@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  nats:
+      image : nats:latest
+      ports: 
+          - "4222:4222"
+          - "8222:8222"
+          - "6222:622"
+
+  publisher:
+      build: ./publisher
+      restart: on-failure
+      ports:
+        - "3000:3000"
+      networks:
+        - NATS
+
+  subscribe:
+      build: ./subscribe
+      restart: on-failure
+      networks:
+        - NATS
+networks:
+  NATS:
+    driver: "bridge"
