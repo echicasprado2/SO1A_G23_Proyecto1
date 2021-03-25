@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+
+  publisher:
+    build: ./publisher
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - pubsub
+  
+  subscriber:
+    build: ./subscriber
+    restart: always
+    networks:
+      - pubsub
+
+networks:
+  pubsub:
+    driver: "bridge"
