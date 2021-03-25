@@ -23,11 +23,11 @@ const getRegion = (location) => {
             return "Suroriente"
         case "Jutiapa":
             return "Suroriente"
-        case "Petén":
-            return "Petén"
+        case "Peten":
+            return "Peten"
         case "Quetzaltenango":
             return "Suroccidente"
-        case "Quiché":
+        case "Quiche":
             return "Noroccidente"
         case "Retalhuleu":
             return "Suroccidente"
@@ -37,11 +37,11 @@ const getRegion = (location) => {
             return "Suroccidente"
         case "Santa Rosa":
             return "Suroriente"
-        case "Sololá":
+        case "Solola":
             return "Suroccidente"
         case "Suchitepequez":
             return "Suroccidente"
-        case "Totonicapán":
+        case "Totonicapan":
             return "Suroccidente"
         case "Zacapa":
             return "Nororiente"
