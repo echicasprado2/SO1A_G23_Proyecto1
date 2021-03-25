@@ -94,10 +94,15 @@ func pullMsgs(client *pubsub.Client, name string, topic *pubsub.Topic, testPubli
 	return nil
 }
 
+
 func main() {
 	ctx := context.Background()
 	proj := "proyecto1-so1"
 	idTopic := "topic-p1"
+
+	//Credenciales
+	//jsonPath:= "./pubsub.key.json"
+
 	client, err := pubsub.NewClient(ctx, proj)
 	if err != nil {
 		log.Fatalf("Could not create pubsub Client: %v", err)

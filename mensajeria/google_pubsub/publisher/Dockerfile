@@ -1,7 +1,7 @@
 FROM golang
 WORKDIR /
 COPY . .
-ENV GOOGLE_APLICACION_CREDENTIALS = "./pubsub.key.json"
+ENV GOOGLE_APPLICATION_CREDENTIALS="./pubsub.key.json"
 RUN go mod download
-EXPOSE 5001
-CMD ["go", "run", "publiser.go"]
+EXPOSE 3000
+CMD ["go", "run", "publisher.go"]
