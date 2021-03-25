@@ -45,10 +45,11 @@ static int al_abrir(struct inode *inode, struct file *file)
     return single_open(file,generar_json,NULL);
 }
 
-static struct proc_ops operaciones =
+static struct file_operations operaciones =
 {
-    .proc_open = al_abrir,
-    .proc_read = seq_read
+    .owner = THIS_MODULE,
+    .open = al_abrir,
+    .read = seq_read
 };
 
 
