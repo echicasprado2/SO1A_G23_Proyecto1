@@ -135,5 +135,12 @@ router.route('/api/cpu').get(async(req,res) => {
     res.json(JSON.parse(stringCpu))
 })
 
+router.route('/api/memoria').get(async(req,res) => {
+    const getMemoria = () => (fs.readFileSync('/proc/process_info','utf8')).toString();
+    const stringMemoria = getMemoria()
+    res.set('Access-Control-Allow-Origin', '*')
+    res.json(JSON.parse(stringMemoria))
+})
+
 
 module.exports = router
