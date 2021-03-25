@@ -26,7 +26,7 @@ type caso struct {
 }
 
 const (
-	address     = ":50051"
+	address     = "grpcserver:50051"
 	defaultName = "world"
 )
 
@@ -98,5 +98,5 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/", Inicio).Methods("GET")
 	router.HandleFunc("/CasoNuevo", CasoNuevo).Methods("POST")
-	http.ListenAndServe(":3001", router)
+	http.ListenAndServe(":3000", router)
 }

@@ -3,17 +3,17 @@ services:
   grpcserver:
     build: ./server
     ports:
-      - "50052:50051"
+      - "50051:50051"
     networks:
-      - server
+      - grpcapp
 
   grpcclient:
     build: ./client
     ports:
-      - "5001:5000"
+      - "3000:3000"
     networks:
-      - client
+      - grpcapp
 
 networks:
-  grpctuiter:
+  grpcapp:
     driver: "bridge"
