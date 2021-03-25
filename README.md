@@ -8,8 +8,8 @@
 |201403532|Ever Eduardo Chicas Prado|
 ---
 
-## ![Manual de usuario](https://github.com/echicasprado/SO1A_G23_Proyecto1/blob/main/images/README.md)
-
+## [Manual de usuario](https://github.com/echicasprado/SO1A_G23_Proyecto1/blob/main/images/README.md)
+---
 ## Flujo
 
 ![flujo](https://github.com/echicasprado/SO1A_G23_Proyecto1/blob/main/images/flujo.png)
